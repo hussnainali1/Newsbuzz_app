@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar, Alert } from "react-native";
+import { View, Text, StatusBar, Alert, RefreshControl } from "react-native";
 import TravelGuide from "../screens/components/Guide/TravelGuide";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -10,11 +10,37 @@ export default class jobs extends Component {
     super();
     this.state = {
       data: [],
+      refreshing: false,
     };
   }
+  _onRefresh = () => {
+    this.setState({ refreshing: true });
+    this.componentDidMount();
+  };
   componentDidMount() {
+    this.updateJobsData();
     this.getData();
   }
+
+  updateJobsData = async () => {
+    const response = await fetch(
+      "http://192.168.10.3:9000/api/img/DBdata/update",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == null) alert("-__- ");
+        else {
+          alert("successfull");
+        }
+      });
+    // console.log(this.state.data);
+  };
   getData = async () => {
     const response = await fetch("http://192.168.10.3:9000/api/jobs");
     // const response = await fetch("http:192.168.10.3:9000/api/tech");
@@ -30,6 +56,12 @@ export default class jobs extends Component {
       <ScrollView
         vertical
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+          />
+        }
         style={{
           marginTop: 20,
         }}
@@ -49,7 +81,8 @@ export default class jobs extends Component {
                 uri: item.img,
               }}
               placeName={item.tilte}
-              placeDes={item.discription}
+              // placeDes={item.discription}
+              placeDes={item.description_img_link_data}
             />
           )}
           ItemSeparatorComponent={this.renderSeparator}

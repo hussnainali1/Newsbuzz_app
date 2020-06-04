@@ -37,7 +37,18 @@ export default class HomePage extends React.Component {
       show: true,
     };
   }
-
+  componentDidMount() {
+    this.getData();
+  }
+  getData = async () => {
+    const response = await fetch("http://192.168.10.3:9000");
+    // const response = await fetch("http:192.168.10.3:9000/api/tech");
+    const data = await response.json();
+    // this.setState({
+    //   data,
+    // });
+    // console.log(this.state.data);
+  };
   hideShowTextComponentView = () => {
     this.setState({ Category: "" });
     if (this.state.status == false) {

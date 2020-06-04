@@ -12,8 +12,11 @@ const jobs_n = require("../models/jobs_model");
 
 const sports_n = require("../models/sports");
 const buss_m = require("../models/business_model");
+var request = require("request");
+// const jobs_news = require("../../models/jobs_model");
+// var fs = require("fs");
 
-exports.getData = (req, res) => {
+exports.getData = async (req, res) => {
   try {
     fs.readFile("./datafiles/newdata/DailyNews.json", (err, data) => {
       if (err) throw err;
@@ -136,8 +139,49 @@ exports.getData = (req, res) => {
         const jobsNews = new jobs_n(jobs[key]);
         jobsNews.save();
       }
-      return res.json({ message: " All the Data saved Successfully" });
+      // return res.json({ message: " All the Data saved Successfully" });
     });
+    try {
+      const jobs_R = await jobs_n.find();
+
+      let i = 0;
+
+      while (jobs_R[i] != null) {
+        // -----------------------------------------------
+
+        console.log("===" + i + "====");
+        console.log("this is id without conversion == " + jobs_R[i]._id);
+        // console.log("this is id with conversion == " + jobs_R._id[i].toHaxString());
+        // -----------------------------------------------
+
+        img_name = jobs_R[i]._id + ".jpg";
+
+        console.log(img_name);
+        img_link = jobs_R[i].description_img_link;
+        // ====================================
+
+        var download = function (uri, filename, callback) {
+          request.head(uri, function (err, res, body) {
+            console.log("content-type:", res.headers["content-type"]);
+            console.log("content-length:", res.headers["content-length"]);
+
+            request(uri)
+              .pipe(fs.createWriteStream("./img_to_be_OCR//" + filename))
+              .on("close", callback);
+          });
+        };
+
+        download(img_link, img_name, function () {
+          console.log("done");
+        });
+        // ===================================
+        i = i + 1;
+      }
+      return res.json({ message: " all images are downloaded" });
+    } catch (err) {
+      console.error(err.message);
+      return res.status(500).send("Server error");
+    }
   } catch (error) {
     res.json(error);
   }
