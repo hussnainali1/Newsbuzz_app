@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StatusBar, Alert, RefreshControl } from "react-native";
-import TravelGuide from "../screens/components/Guide/TravelGuide";
+import Jobs_travelGuid from "./components/Guide/Jobs_travelGuid";
 import { ScrollView } from "react-native-gesture-handler";
 
 import { AppRegistry, FlatList, StyleSheet } from "react-native";
@@ -34,10 +34,11 @@ export default class jobs extends Component {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data == null) alert("-__- ");
-        else {
-          alert("successfull");
-        }
+        // if (data == null)
+        // alert("-__- ");
+        // else {
+        //   // alert("successfull");
+        // }
       });
     // console.log(this.state.data);
   };
@@ -76,13 +77,13 @@ export default class jobs extends Component {
           data={this.state.data}
           keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
-            <TravelGuide
+            <Jobs_travelGuid
               placeUri={{
                 uri: item.img,
               }}
               placeName={item.tilte}
-              // placeDes={item.discription}
-              placeDes={item.description_img_link_data}
+              placeDes={item.discription}
+              place_img_detail={item.description_img_link_data}
             />
           )}
           ItemSeparatorComponent={this.renderSeparator}
