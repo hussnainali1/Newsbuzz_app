@@ -85,7 +85,7 @@ export default class HomePage extends React.Component {
                 //   this.state.Category ==
                 //     "http://CC:9000/api/search/BSadmission" ||
                 //   this.state.Category ==
-                //     "http://192.168.0.103:9000/api/search/MSadmission"
+                //     "http://192.168.10.3:9000/api/search/MSadmission"
                 // ) {
                 // alert(item.discription.trim());
                 // } else {
@@ -115,7 +115,7 @@ export default class HomePage extends React.Component {
       // alert(data);
     }
   };
-  search = async () => { };
+  search = async () => {};
 
   render({ navigation } = this.props) {
     return (
@@ -157,7 +157,7 @@ export default class HomePage extends React.Component {
           onSubmitEditing={this.updateSearch}
           onFocus={this.hideShowTextComponentView}
           onBlur={this.ShowHideTextComponentView}
-        // onsearch={this.ShowHideTextComponentView}
+          // onsearch={this.ShowHideTextComponentView}
         />
 
         {/*Here we will return the view when state is true 
@@ -275,88 +275,88 @@ export default class HomePage extends React.Component {
             </View>
           </ScrollView>
         ) : (
-            <ScrollView vertical showsVerticalScrollIndicator={false}>
-              <View style={{ justifyContent: "center", flex: 1, margin: 10 }}>
-                {
-                  // Pass any View or Component inside the curly bracket.
-                  // Here the ? Question Mark represent the ternary operator.
+          <ScrollView vertical showsVerticalScrollIndicator={false}>
+            <View style={{ justifyContent: "center", flex: 1, margin: 10 }}>
+              {
+                // Pass any View or Component inside the curly bracket.
+                // Here the ? Question Mark represent the ternary operator.
 
-                  this.state.status ? (
-                    <Picker
-                      style={{ width: "auto" }}
-                      selectedValue={this.state.Category}
-                      onValueChange={(itemValue, itemIndex) =>
-                        this.setState({ Category: itemValue })
-                      }
-                    >
-                      <Picker.Item
-                        label="Select a category before searching"
-                        value=""
-                      />
-                      <Picker.Item
-                        label="LATEST"
-                        value="http:/192.168.0.103:9000/api/search/latest"
-                      />
-                      <Picker.Item
-                        label="Bussiness"
-                        value="http:/192.168.0.103:9000/api/search/bussiness"
-                      />
-                      <Picker.Item
-                        label="Sports"
-                        value="http:/192.168.0.103:9000/api/search/sports"
-                      />
-                      <Picker.Item
-                        label="Technology"
-                        value="http:/192.168.0.103:9000/api/search/technology"
-                      />
-                      <Picker.Item
-                        label="World"
-                        value="http:/192.168.0.103:9000/api/search/world"
-                      />
-                      <Picker.Item
-                        label="MS Admission"
-                        value="http:/192.168.0.103:9000/api/search/MSadmission"
-                      />
-                      <Picker.Item
-                        label="BS Admission"
-                        value="http:/192.168.0.103:9000/api/search/BSadmission"
-                      />
-                      <Picker.Item
-                        label="MS Scholarships"
-                        value="http:/192.168.0.103:9000/api/search/MSscholarship"
-                      />
-                      <Picker.Item
-                        label="BS Scholarships"
-                        value="http:/192.168.0.103:9000/api/search/BSscholarship"
-                      />
-                      <Picker.Item
-                        label="Jobs"
-                        value="http:/192.168.0.103:9000/api/search/searchjobs"
-                      />
-                    </Picker>
-                  ) : null
-                }
-              </View>
+                this.state.status ? (
+                  <Picker
+                    style={{ width: "auto" }}
+                    selectedValue={this.state.Category}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({ Category: itemValue })
+                    }
+                  >
+                    <Picker.Item
+                      label="Select a category before searching"
+                      value=""
+                    />
+                    <Picker.Item
+                      label="LATEST"
+                      value="http:/192.168.10.3:9000/api/search/latest"
+                    />
+                    <Picker.Item
+                      label="Bussiness"
+                      value="http:/192.168.10.3:9000/api/search/bussiness"
+                    />
+                    <Picker.Item
+                      label="Sports"
+                      value="http:/192.168.10.3:9000/api/search/sports"
+                    />
+                    <Picker.Item
+                      label="Technology"
+                      value="http:/192.168.10.3:9000/api/search/technology"
+                    />
+                    <Picker.Item
+                      label="World"
+                      value="http:/192.168.10.3:9000/api/search/world"
+                    />
+                    <Picker.Item
+                      label="MS Admission"
+                      value="http:/192.168.10.3:9000/api/search/MSadmission"
+                    />
+                    <Picker.Item
+                      label="BS Admission"
+                      value="http:/192.168.10.3:9000/api/search/BSadmission"
+                    />
+                    <Picker.Item
+                      label="MS Scholarships"
+                      value="http:/192.168.10.3:9000/api/search/MSscholarship"
+                    />
+                    <Picker.Item
+                      label="BS Scholarships"
+                      value="http:/192.168.10.3:9000/api/search/BSscholarship"
+                    />
+                    <Picker.Item
+                      label="Jobs"
+                      value="http:/192.168.10.3:9000/api/search/searchjobs"
+                    />
+                  </Picker>
+                ) : null
+              }
+            </View>
 
-              <FlatList
-                data={this.state.data}
-                keyExtractor={(item) => item._id}
-                renderItem={({ item }) => (
-                  <TravelGuide
-                    // navigation={navigation}
-                    //   btn={'X'}
-                    placeUri={{
-                      uri: item.img,
-                      // "https://images.pexels.com/photos/3422053/pexels-photo-3422053.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                    }}
-                    placeName={item.tilte}
-                    placeDes={item.discription}
-                  />
-                )}
-                ItemSeparatorComponent={this.renderSeparator}
-              />
-            </ScrollView>
-          )}
+            <FlatList
+              data={this.state.data}
+              keyExtractor={(item) => item._id}
+              renderItem={({ item }) => (
+                <TravelGuide
+                  // navigation={navigation}
+                  //   btn={'X'}
+                  placeUri={{
+                    uri: item.img,
+                    // "https://images.pexels.com/photos/3422053/pexels-photo-3422053.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                  }}
+                  placeName={item.tilte}
+                  placeDes={item.discription}
+                />
+              )}
+              ItemSeparatorComponent={this.renderSeparator}
+            />
+          </ScrollView>
+        )}
 
         {/* // ========================================= */}
       </View>

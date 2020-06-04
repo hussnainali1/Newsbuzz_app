@@ -10,7 +10,7 @@ export default class Technology extends Component {
     super();
     this.state = {
       data: [],
-      refreshing: false
+      refreshing: false,
     };
   }
   _onRefresh = () => {
@@ -22,11 +22,11 @@ export default class Technology extends Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/tech");
-    const response = await fetch("http://192.168.0.103:9000/api/tech");
+    const response = await fetch("http://192.168.10.3:9000/api/tech");
     const data = await response.json();
     this.setState({
       data: data,
-      refreshing: false
+      refreshing: false,
     });
     // console.log(this.state.data);
   };
@@ -45,11 +45,11 @@ export default class Technology extends Component {
       >
         <FlatList
           data={this.state.data}
-          keyExtractor={item => item._id}
+          keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
             <TravelGuide
               placeUri={{
-                uri: item.img
+                uri: item.img,
                 // "https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               }}
               placeName={item.tilte}
@@ -64,11 +64,11 @@ export default class Technology extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   item: {
     padding: 10,
     fontSize: 18,
-    height: 44
-  }
+    height: 44,
+  },
 });

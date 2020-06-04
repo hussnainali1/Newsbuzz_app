@@ -10,7 +10,7 @@ class Latest extends React.Component {
     super();
     this.state = {
       data: [],
-      refreshing: false
+      refreshing: false,
     };
   }
   _onRefresh = () => {
@@ -22,11 +22,11 @@ class Latest extends React.Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/news");
-    const response = await fetch("http://192.168.0.103:9000/api/news");
+    const response = await fetch("http://192.168.10.3:9000/api/news");
     const data = await response.json();
     this.setState({
       data: data,
-      refreshing: false
+      refreshing: false,
     });
     // console.log(this.state.data);
   };
@@ -45,11 +45,11 @@ class Latest extends React.Component {
       >
         <FlatList
           data={this.state.data}
-          keyExtractor={item => item._id}
+          keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
             <TravelGuide
               placeUri={{
-                uri: item.img
+                uri: item.img,
                 // "https://images.pexels.com/photos/3422053/pexels-photo-3422053.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
               }}
               placeName={item.tilte}
@@ -65,12 +65,12 @@ class Latest extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   item: {
     padding: 10,
     fontSize: 18,
-    height: 44
-  }
+    height: 44,
+  },
 });
 export default Latest;

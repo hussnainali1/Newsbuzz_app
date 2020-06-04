@@ -4,8 +4,6 @@ const path = require("path");
 const jobs_n = require("../../models/jobs_model");
 
 exports.img_data_update_to_db = async (req, res) => {
-
-
   function readFiles(dir, processFile) {
     // read directory
     fs.readdir(dir, (error, fileNames) => {
@@ -38,7 +36,7 @@ exports.img_data_update_to_db = async (req, res) => {
   }
 
   readFiles(
-    "F:/node work_space/img download api/After_70-_events-work/NewsBuzz/server/img_text_files/",
+    "D:/Project/react/final_project/After_70-_events-work/NewsBuzz/server/img_text_files/",
     (filepath, name, ext, stat) => {
       // console.log("file path:", filepath);0
       console.log("file name:", name.toString());
@@ -49,13 +47,13 @@ exports.img_data_update_to_db = async (req, res) => {
         var data = jobs.img_description;
 
         // ================================================
-        console.log("===================================================")
+        console.log("===================================================");
         console.log("this id readed from a file = " + jobs._id);
 
         // ================================================
 
-          var myquery = { "_id": jobs._id };
-          var newvalues = { $set: { "description_img_link_data": data } };
+        var myquery = { _id: jobs._id };
+        var newvalues = { $set: { description_img_link_data: data } };
         // ====================================================================
 
         try {
@@ -64,19 +62,13 @@ exports.img_data_update_to_db = async (req, res) => {
           // });
           jobs_n.updateOne(myquery, newvalues, function (err, res) {
             if (err) throw err;
-            console.log(res)
-
+            console.log(res);
           });
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
-
-
-      }
-      );
+      });
     }
   );
   return res.json({ message: " all image data save to database" });
-
 };
-
