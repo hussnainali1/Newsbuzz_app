@@ -24,7 +24,7 @@ export default class jobs extends Component {
 
   updateJobsData = async () => {
     const response = await fetch(
-      "http://192.168.10.3:9000/api/img/DBdata/update",
+      "http://http://newsbuzz-server.herokuapp.com/api/img/DBdata/update",
       {
         method: "POST",
         headers: {
@@ -43,8 +43,10 @@ export default class jobs extends Component {
     // console.log(this.state.data);
   };
   getData = async () => {
-    const response = await fetch("http://192.168.10.3:9000/api/jobs");
-    // const response = await fetch("http:192.168.10.3:9000/api/tech");
+    const response = await fetch(
+      "http://http://newsbuzz-server.herokuapp.com/api/jobs"
+    );
+    // const response = await fetch("http:http://newsbuzz-server.herokuapp.com/api/tech");
     const data = await response.json();
     this.setState({
       data,

@@ -41,8 +41,8 @@ export default class HomePage extends React.Component {
     this.getData();
   }
   getData = async () => {
-    const response = await fetch("http://192.168.10.3:9000");
-    // const response = await fetch("http:192.168.10.3:9000/api/tech");
+    const response = await fetch("http://http://newsbuzz-server.herokuapp.com");
+    // const response = await fetch("http:http://newsbuzz-server.herokuapp.com/api/tech");
     const data = await response.json();
     // this.setState({
     //   data,
@@ -96,7 +96,7 @@ export default class HomePage extends React.Component {
                 //   this.state.Category ==
                 //     "http://CC:9000/api/search/BSadmission" ||
                 //   this.state.Category ==
-                //     "http://192.168.10.3:9000/api/search/MSadmission"
+                //     "http://http://newsbuzz-server.herokuapp.com/api/search/MSadmission"
                 // ) {
                 // alert(item.discription.trim());
                 // } else {
@@ -306,43 +306,43 @@ export default class HomePage extends React.Component {
                     />
                     <Picker.Item
                       label="LATEST"
-                      value="http:/192.168.10.3:9000/api/search/latest"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/latest"
                     />
                     <Picker.Item
                       label="Bussiness"
-                      value="http:/192.168.10.3:9000/api/search/bussiness"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/bussiness"
                     />
                     <Picker.Item
                       label="Sports"
-                      value="http:/192.168.10.3:9000/api/search/sports"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/sports"
                     />
                     <Picker.Item
                       label="Technology"
-                      value="http:/192.168.10.3:9000/api/search/technology"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/technology"
                     />
                     <Picker.Item
                       label="World"
-                      value="http:/192.168.10.3:9000/api/search/world"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/world"
                     />
                     <Picker.Item
                       label="MS Admission"
-                      value="http:/192.168.10.3:9000/api/search/MSadmission"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/MSadmission"
                     />
                     <Picker.Item
                       label="BS Admission"
-                      value="http:/192.168.10.3:9000/api/search/BSadmission"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/BSadmission"
                     />
                     <Picker.Item
                       label="MS Scholarships"
-                      value="http:/192.168.10.3:9000/api/search/MSscholarship"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/MSscholarship"
                     />
                     <Picker.Item
                       label="BS Scholarships"
-                      value="http:/192.168.10.3:9000/api/search/BSscholarship"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/BSscholarship"
                     />
                     <Picker.Item
                       label="Jobs"
-                      value="http:/192.168.10.3:9000/api/search/searchjobs"
+                      value="http:/http://newsbuzz-server.herokuapp.com/api/search/searchjobs"
                     />
                   </Picker>
                 ) : null

@@ -17,7 +17,9 @@ export default class Undergraduate extends React.Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/admission");
-    const response = await fetch("http://192.168.10.3:9000/api/BSadmission");
+    const response = await fetch(
+      "http://http://newsbuzz-server.herokuapp.com/api/BSadmission"
+    );
     const data = await response.json();
     this.setState({
       data,

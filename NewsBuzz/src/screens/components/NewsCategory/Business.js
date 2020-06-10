@@ -30,7 +30,9 @@ export default class business extends React.Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/news");
-    const response = await fetch("http://192.168.10.3:9000/api/bussiness");
+    const response = await fetch(
+      "http://http://newsbuzz-server.herokuapp.com/api/bussiness"
+    );
     const data = await response.json();
     this.setState({
       data: data,
