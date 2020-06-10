@@ -6,7 +6,7 @@ const route = require("./routes/routes");
 var cors = require("cors");
 
 // mongoose.connect("mongodb://localhost/newsbuzz", {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect("mongodb://localhost/Newsbuzz", {
+mongoose.connect("mongodb+srv://hussnainkhilgi1:Pakistan@123@cluster0-011rc.mongodb.net/Newsbuzz?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -20,6 +20,6 @@ app.use("/", route);
 // app.use("/api/mews", read);
 // app.use("/api/scholarship/bachulars", read);
 
-app.listen(9000, function() {
+app.listen(9000, function () {
   console.log("server is running at post localhost:9000");
 });
