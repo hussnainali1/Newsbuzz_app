@@ -18,7 +18,7 @@ export default class Undergraduate extends React.Component {
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/admission");
     const response = await fetch(
-      "http://http://newsbuzz-server.herokuapp.com/api/BSadmission"
+      "http://newsbuzz-server.herokuapp.com/api/BSadmission"
     );
     const data = await response.json();
     this.setState({
@@ -52,8 +52,8 @@ export default class Undergraduate extends React.Component {
             keyExtractor={(item) => item._id}
             renderItem={({ item }) => (
               <TravelGuide
-                placeUri={{
-                  uri: "https://source.unsplash.com/random",
+                placeUri={{ // {item.img_link}
+                  uri: item.img_link,
 
                   // uri: "https://images.unsplash.com/photo-1503971090465-19d3c80f81f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=845&q=80"
                 }}

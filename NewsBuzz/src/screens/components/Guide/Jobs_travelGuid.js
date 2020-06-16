@@ -81,14 +81,16 @@ const Jobs_travelGuid = ({
           >
             {placeDes.trim()}
           </Text>
+
           <Text
             style={{
-              fontSize: 18,
+              fontSize: 24,
+              fontWeight: "bold",
               opacity: 1,
               textAlign: "center",
             }}
           >
-            IMAGE DESCRIPTion
+            {"\n"}Image Processing:{"\n"}
           </Text>
           <Text
             style={{

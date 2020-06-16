@@ -18,7 +18,7 @@ export default class International extends React.Component {
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/MSscholarship");
     const response = await fetch(
-      "http://http://newsbuzz-server.herokuapp.com/api/MSscholarship"
+      "http://newsbuzz-server.herokuapp.com/api/MSscholarship"
     );
     const data = await response.json();
     this.setState({

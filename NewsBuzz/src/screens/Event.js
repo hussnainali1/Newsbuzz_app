@@ -11,7 +11,7 @@ const navigator = createMaterialTopTabNavigator(
     Register: {
       screen: Register,
       navigationOptions: {
-        tabBarLabel: "Register Event",
+        tabBarLabel: "Registration",
       },
     },
     AllEvents: {
@@ -23,7 +23,7 @@ const navigator = createMaterialTopTabNavigator(
     Userlocation: {
       screen: Userlocation,
       navigationOptions: {
-        tabBarLabel: "User Location",
+        tabBarLabel: "Location",
       },
     },
   },

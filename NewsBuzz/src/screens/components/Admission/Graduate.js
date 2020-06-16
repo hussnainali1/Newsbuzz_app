@@ -53,7 +53,8 @@ export default class Graduate extends React.Component {
             renderItem={({ item }) => (
               <TravelGuide
                 placeUri={{
-                  uri: "https://source.unsplash.com/random",
+                  // {item.img_link}
+                  uri: item.img_link,
 
                   // uri: "https://images.unsplash.com/photo-1503971090465-19d3c80f81f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=845&q=80"
                 }}

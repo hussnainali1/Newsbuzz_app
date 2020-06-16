@@ -28,7 +28,7 @@ class Latest extends React.Component {
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/sports");
     const response = await fetch(
-      "http://http://newsbuzz-server.herokuapp.com/api/sports"
+      "http://newsbuzz-server.herokuapp.com/api/sports"
     );
     const data = await response.json();
     this.setState({

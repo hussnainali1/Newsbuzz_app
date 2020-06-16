@@ -364,7 +364,7 @@ export default class Register extends React.Component {
 
     // alert("successfull");
     else {
-      fetch("http://http://newsbuzz-server.herokuapp.com/saveEvent", {
+      fetch("http://newsbuzz-server.herokuapp.com/saveEvent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
