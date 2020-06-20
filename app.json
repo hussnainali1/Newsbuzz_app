@@ -14,11 +14,11 @@
     },
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/guide.png",
+    "icon": "./assets/icons.png",
     "splash": {
       "image": "./assets/splash1.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#2e8b57"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

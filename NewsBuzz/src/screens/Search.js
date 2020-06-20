@@ -66,7 +66,7 @@ export class Search extends Component {
                 // ) {
                 // alert(item.discription.trim());
                 // } else {
-                alert(item.tilte.trim());
+                // alert(item.tilte.trim());
                 // }
 
                 // alert(item.discription.trim());
@@ -92,7 +92,7 @@ export class Search extends Component {
       // alert(data);
     }
   };
-  search = async () => {};
+  search = async () => { };
   render(navigation) {
     return (
       <View style={{ flex: 1, marginTop: 24 }}>
@@ -108,7 +108,7 @@ export class Search extends Component {
           onFocus={this.hideShowTextComponentView}
           onBlur={this.ShowHideTextComponentView}
           onIconPress={console.log("Press MEEEEEE", Math.random() * 10)}
-          // onsearch={this.ShowHideTextComponentView}
+        // onsearch={this.ShowHideTextComponentView}
         />
 
         <ScrollView vertical showsVerticalScrollIndicator={false}>
