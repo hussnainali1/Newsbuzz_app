@@ -66,9 +66,16 @@ const TravelGuide = ({
           //   justifyContent: "space-between"
         }}
       >
-        <Text style={{ fontSize: 18, marginBottom: 10, fontWeight: "600" }}>
-          {placeName.trim()}
-        </Text>
+        
+          
+          {placeName ? (
+          <Text style={{ fontSize: 18, marginBottom: 10, fontWeight: "600" }}>{placeName.trim()} </Text>
+
+          ):null
+
+          }
+
+       
         <ViewMoreText
           numberOfLines={3}
           renderViewMore={renderViewMore}
