@@ -66,9 +66,8 @@ export class Search extends Component {
                 // ) {
                 // alert(item.discription.trim());
                 // } else {
-                alert(item.tilte.trim());
+                // alert(item.tilte.trim());
                 // }
-
                 // alert(item.discription.trim());
               });
             } else {
