@@ -20,12 +20,12 @@ const navigator = createMaterialTopTabNavigator(
         tabBarLabel: "All Events",
       },
     },
-    Userlocation: {
-      screen: Userlocation,
-      navigationOptions: {
-        tabBarLabel: "Location",
-      },
-    },
+    // Userlocation: {
+    //   screen: Userlocation,
+    //   navigationOptions: {
+    //     tabBarLabel: "Location",
+    //   },
+    // },
   },
   {
     tabBarOptions: {

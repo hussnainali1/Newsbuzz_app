@@ -91,7 +91,7 @@ export class Search extends Component {
       // alert(data);
     }
   };
-  search = async () => {};
+  search = async () => { };
   render(navigation) {
     return (
       <View style={{ flex: 1, marginTop: 24 }}>
@@ -107,7 +107,7 @@ export class Search extends Component {
           onFocus={this.hideShowTextComponentView}
           onBlur={this.ShowHideTextComponentView}
           onIconPress={console.log("Press MEEEEEE", Math.random() * 10)}
-          // onsearch={this.ShowHideTextComponentView}
+        // onsearch={this.ShowHideTextComponentView}
         />
 
         <ScrollView vertical showsVerticalScrollIndicator={false}>
@@ -184,6 +184,7 @@ export class Search extends Component {
                   // "https://images.pexels.com/photos/3422053/pexels-photo-3422053.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                 }}
                 placeName={item.tilte}
+               
                 placeDes={item.discription}
               />
             )}
