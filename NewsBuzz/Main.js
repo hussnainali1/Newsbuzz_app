@@ -26,8 +26,9 @@ import Undergraduate from "./src/screens/components/Admission/Undergraduate";
 import Local from "./src/screens/components/Scholarship/Local";
 import International from "./src/screens/components/Scholarship/International";
 import Search from "./src/screens/Search";
-
+import SettingScreen from './src/screens/settings'
 console.disableYellowBox = true;
+
 const Tabs = createBottomTabNavigator(
   {
     HomePage: {
@@ -39,6 +40,7 @@ const Tabs = createBottomTabNavigator(
         ),
       },
     },
+
     Search: {
       screen: Search,
       navigationOptions: {
@@ -136,7 +138,17 @@ const Tabs = createBottomTabNavigator(
         ),
       },
     },
+    Settings: {
+      screen: SettingScreen,
+      navigationOptions: {
+        tabBarLabel: "HomePage",
+        tabBarIcon: ({ tintColor }) => (
+          <AD name="setting" color={tintColor} size={24} />
+        ),
+      },
+    },
   },
+
   {
     tabBarOptions: {
       activeTintColor: "red",
