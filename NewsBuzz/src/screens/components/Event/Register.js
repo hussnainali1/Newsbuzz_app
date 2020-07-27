@@ -62,7 +62,7 @@
 
 //     // alert("successfull");
 //     else {
-//       fetch("http:/192.168.0.103:9000/saveEvent", {
+//       fetch("http:/http://newsbuzz-server.herokuapp.com/saveEvent", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json"
@@ -364,7 +364,7 @@ export default class Register extends React.Component {
 
     // alert("successfull");
     else {
-      fetch("http://192.168.0.103:9000/saveEvent", {
+      fetch("http://newsbuzz-server.herokuapp.com/saveEvent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

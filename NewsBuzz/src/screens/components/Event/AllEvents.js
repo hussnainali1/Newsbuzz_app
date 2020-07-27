@@ -66,7 +66,7 @@ export default class Latest extends React.Component {
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/news");
     const response = await fetch(
-      "http://192.168.0.103:9000/api/display/registerEvent",
+      "http://newsbuzz-server.herokuapp.com/api/display/registerEvent",
 
       {
         method: "post",
@@ -84,7 +84,6 @@ export default class Latest extends React.Component {
       data: data,
       refreshing: false,
     });
-    // console.log(this.state.data);
   };
 
   render() {
@@ -121,6 +120,10 @@ export default class Latest extends React.Component {
               }}
               placeName={item.Event_name}
               placeDes={item.description}
+              // capacity={item.Sitting_cap}
+              date={item.Event_date}
+              time={item.Event_time}
+              location={item.location}
             />
           )}
           ItemSeparatorComponent={this.renderSeparator}

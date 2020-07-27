@@ -18,33 +18,37 @@ export default class jobs extends Component {
     this.componentDidMount();
   };
   componentDidMount() {
-    this.updateJobsData();
+
+    // this.updateJobsData();
     this.getData();
   }
 
-  updateJobsData = async () => {
-    const response = await fetch(
-      "http://192.168.0.103:9000/api/img/DBdata/update",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // if (data == null)
-        // alert("-__- ");
-        // else {
-        //   // alert("successfull");
-        // }
-      });
-    // console.log(this.state.data);
-  };
+  // updateJobsData = async () => {
+  //   const response = await fetch(
+  //     "http://newsbuzz-server.herokuapp.com/api/img/DBdata/update",
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     }
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // if (data == null)
+  //       // alert("-__- ");
+  //       // else {
+  //       //   // alert("successfull");
+  //       // }
+  //     });
+  // console.log(this.state.data);
+  // };
   getData = async () => {
-    const response = await fetch("http://192.168.0.103:9000/api/jobs");
-    // const response = await fetch("http:192.168.10.3:9000/api/tech");
+    const response = await fetch(
+      "http://newsbuzz-server.herokuapp.com/api/jobs"
+    );
+    // const response = await fetch("http:http://newsbuzz-server.herokuapp.com/api/tech");
+
     const data = await response.json();
     this.setState({
       data,
@@ -101,4 +105,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 44,
   },
+
+
 });
+

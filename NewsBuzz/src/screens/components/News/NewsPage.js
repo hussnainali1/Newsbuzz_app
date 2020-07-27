@@ -17,7 +17,7 @@
 //   }
 //   getData = async () => {
 //     const response = await fetch("http://10.113.50.196:9000/api/jobs");
-//     // const response = await fetch("http:/192.168.0.103:9000/api/tech");
+//     // const response = await fetch("http:/http://newsbuzz-server.herokuapp.com/api/tech");
 //     const data = await response.json();
 //     this.setState({
 //       data

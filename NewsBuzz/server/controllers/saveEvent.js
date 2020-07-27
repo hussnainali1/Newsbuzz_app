@@ -20,7 +20,7 @@ exports.save_event = async (req, res) => {
     eventObj.Event_name = req.body.Event_title;
     eventObj.Sitting_Cap = req.body.sitting_capacity;
     eventObj.description = req.body.Event_description;
-    eventObj.status = "notvarified";
+    eventObj.status = "un-approved";
 
     try {
       console.log(eventObj);

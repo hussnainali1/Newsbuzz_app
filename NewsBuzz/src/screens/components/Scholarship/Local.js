@@ -9,7 +9,7 @@ export default class Local extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
     };
   }
   componentDidMount() {
@@ -17,10 +17,12 @@ export default class Local extends React.Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/MSscholarship");
-    const response = await fetch("http://192.168.0.103:9000/api/BSscholarship");
+    const response = await fetch(
+      "http://newsbuzz-server.herokuapp.com/api/BSscholarship"
+    );
     const data = await response.json();
     this.setState({
-      data
+      data,
     });
     // console.log(this.state.data);
   };
@@ -44,18 +46,18 @@ export default class Local extends React.Component {
             margin: 5,
             // backgroundColor: "#fff",
             border: 2.9,
-            borderColor: "black"
+            borderColor: "black",
             // alignSelf: "center",
           }}
         >
           <FlatList
             data={this.state.data}
-            keyExtractor={item => item._id}
+            keyExtractor={(item) => item._id}
             renderItem={({ item }) => (
               <View>
                 <TravelGuide
                   placeUri={{
-                    uri: "https://source.unsplash.com/random"
+                    uri: "https://source.unsplash.com/random",
 
                     // "https://images.unsplash.com/photo-1503971090465-19d3c80f81f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=845&q=80"
                   }}

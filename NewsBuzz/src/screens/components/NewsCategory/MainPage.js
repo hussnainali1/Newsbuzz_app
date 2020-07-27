@@ -7,7 +7,7 @@ import {
   TabHeading,
   Icon,
   Text,
-  RefreshControl
+  RefreshControl,
 } from "native-base";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 import Latest from "./Latest";
@@ -22,33 +22,33 @@ const navigator = createMaterialTopTabNavigator(
     Latest: {
       screen: Latest,
       navigationOptions: {
-        tabBarLabel: "Latest"
-      }
+        tabBarLabel: "Latest",
+      },
     },
     Business: {
       screen: Business,
       navigationOptions: {
-        tabBarLabel: "Business"
-      }
+        tabBarLabel: "Business",
+      },
     },
     Sports: {
       screen: Sports,
       navigationOptions: {
-        tabBarLabel: "Sports"
-      }
+        tabBarLabel: "Sports",
+      },
     },
     Technology: {
       screen: Technology,
       navigationOptions: {
-        tabBarLabel: "Technology"
-      }
+        tabBarLabel: "Technology",
+      },
     },
     World: {
       screen: WorldNews,
       navigationOptions: {
-        tabBarLabel: "World"
-      }
-    }
+        tabBarLabel: "World",
+      },
+    },
   },
   {
     tabBarOptions: {
@@ -57,7 +57,7 @@ const navigator = createMaterialTopTabNavigator(
       upperCaseLabel: false,
       tabStyle: {
         height: 70,
-        width: 120
+        width: 120,
       },
       scrollEnabled: true,
       animationEnablen: true,
@@ -66,11 +66,11 @@ const navigator = createMaterialTopTabNavigator(
         fontSize: 16,
         fontWeight: "700",
         margin: 0,
-        padding: 0
+        padding: 0,
       },
       indicatorStyle: {
         height: 5,
-        backgroundColor: "white"
+        backgroundColor: "white",
       },
       // showLabel: false,
       style: {
@@ -81,9 +81,9 @@ const navigator = createMaterialTopTabNavigator(
         shadowColor: "black",
         shadowOpacity: 0.5,
         // height: 60,
-        elevation: 10
-      }
-    }
+        elevation: 10,
+      },
+    },
   }
 );
 

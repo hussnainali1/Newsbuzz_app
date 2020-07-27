@@ -7,7 +7,7 @@ import {
   AppRegistry,
   FlatList,
   StyleSheet,
-  RefreshControl
+  RefreshControl,
 } from "react-native";
 
 class Latest extends React.Component {
@@ -15,7 +15,7 @@ class Latest extends React.Component {
     super();
     this.state = {
       data: [],
-      refreshing: false
+      refreshing: false,
     };
   }
   _onRefresh = () => {
@@ -27,11 +27,13 @@ class Latest extends React.Component {
   }
   getData = async () => {
     // const response = await fetch("http://10.113.50.196:9000/api/sports");
-    const response = await fetch("http://192.168.0.103:9000/api/sports");
+    const response = await fetch(
+      "http://newsbuzz-server.herokuapp.com/api/sports"
+    );
     const data = await response.json();
     this.setState({
       data: data,
-      refreshing: false
+      refreshing: false,
     });
     // console.log(this.state.data);
   };
@@ -50,7 +52,7 @@ class Latest extends React.Component {
       >
         <FlatList
           data={this.state.data}
-          keyExtractor={item => item._id}
+          keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
             <TravelGuide
               placeUri={{ uri: item.img }}
@@ -67,12 +69,12 @@ class Latest extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   item: {
     padding: 10,
     fontSize: 18,
-    height: 44
-  }
+    height: 44,
+  },
 });
 export default Latest;
