@@ -17,6 +17,7 @@ var request = require("request");
 // var fs = require("fs");
 
 exports.getData = async (req, res) => {
+
   try {
     fs.readFile("./datafiles/newdata/DailyNews.json", (err, data) => {
       if (err) throw err;
@@ -184,7 +185,11 @@ exports.getData = async (req, res) => {
     }
   } catch (error) {
     res.json(error);
+
   }
+  // } catch (error) {
+  //   res.json(error);
+  // }
 };
 
 // exports.getscholar = (req, res) => {};

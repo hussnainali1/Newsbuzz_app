@@ -18,6 +18,7 @@ export default class jobs extends Component {
     this.componentDidMount();
   };
   componentDidMount() {
+
     // this.updateJobsData();
     this.getData();
   }
@@ -47,6 +48,7 @@ export default class jobs extends Component {
       "http://newsbuzz-server.herokuapp.com/api/jobs"
     );
     // const response = await fetch("http:http://newsbuzz-server.herokuapp.com/api/tech");
+
     const data = await response.json();
     this.setState({
       data,
@@ -103,4 +105,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 44,
   },
+
+
 });
+
