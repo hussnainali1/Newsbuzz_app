@@ -99,7 +99,7 @@ export default class SettingScreen extends Component {
   registerForPushNotifications = async () => {
     console.log('notifications')
     var tokens=[]
-    fire.database().ref('tokens/').once('value', function (snapshot) {
+    fire.database().ref('scholarship/').once('value', function (snapshot) {
       console.log(snapshot)
      
       
@@ -178,7 +178,7 @@ export default class SettingScreen extends Component {
         }
         readUserData=async()=> {
           console.log('helloooooooooooooooooo')
-          fire.database().ref('tokens/').once('value', function (snapshot) {
+          fire.database().ref('scholarship/').once('value', function (snapshot) {
               // console.log(snapshot.val())
               var tasks = [];;
              snapshot.forEach((child=>{
